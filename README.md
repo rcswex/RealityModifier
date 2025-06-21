@@ -24,14 +24,13 @@
 
 ```
 RealityModifier/
-├── 0-novel/          # 小说正文（15章）
-├── 3-timelines/      # 时间线与技术演进
-├── 5-concepts/       # 核心理论：李雅普诺夫稳定性、量子纠缠、虚空间
-├── 7-codebase/       # “真实”的代码实现
-│   ├── Nova-System/       # 产品级实现
-│   ├── QUANTUM/          # 量子算法库
-│   └── reality-modifier/  # 原型代码
-└── FF-后记.md        # 创作者的真心话
+├── 0-novel/          # 小说正文（15章 + FF后记）
+├── 2-plot/           # 时间线与技术演进
+├── 6-concepts/       # 核心理论：李雅普诺夫稳定性、量子纠缠、虚空间
+└── 7-codebase/       # “真实”的代码实现
+    ├── Nova-System/       # 产品级实现
+    ├── QUANTUM/          # 量子算法库
+    └── reality-modifier/  # 原型代码
 ```
 
 ## 💡 核心概念
