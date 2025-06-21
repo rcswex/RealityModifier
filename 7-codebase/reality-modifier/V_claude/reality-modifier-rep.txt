@@ -1,0 +1,19 @@
+reality-modifier/
+├── README.md                    # "这些伪代码有什么意义？"
+├── src/
+│   ├── quantum_core.py         # 大量TODO和伪代码
+│   ├── spacetime_interface.py  # 纯理论描述
+│   ├── reality_scanner.py      # 只有框架，没有实现
+│   └── utils/
+│       └── random_quantum.py   # 唯一能运行的部分
+├── docs/
+│   ├── theory/                 # 基于司辰小说的理论笔记
+│   │   ├── chapter23_notes.md  # 密密麻麻的标注
+│   │   └── quantum_classical_bridge.md
+│   └── implementation_ideas.md # 各种天马行空的想法
+├── gui_prototype/
+│   └── qt_design.ui           # Qt界面设计，未实现
+├── examples/
+│   └── demo.py                # 大部分被注释掉
+└── tests/
+    └── test_random.py         # 只测试随机数生成

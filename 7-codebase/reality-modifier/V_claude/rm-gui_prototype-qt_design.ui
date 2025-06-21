@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RealityModifierMainWindow</class>
+ <widget class="QMainWindow" name="RealityModifierMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Reality Modifier v0.31 - Quantum Interface</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #1a1a2e;
+}
+
+QLabel {
+    color: #eee;
+}
+
+QPushButton {
+    background-color: #16213e;
+    color: #fff;
+    border: 1px solid #0f3460;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+QPushButton:hover {
+    background-color: #0f3460;
+}
+
+QPushButton:pressed {
+    background-color: #e94560;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_5">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="mainSplitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      
+      <!-- Left Panel: Control Panel -->
+      <widget class="QWidget" name="controlPanel">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        
+        <!-- Scanner Section -->
+        <item>
+         <widget class="QGroupBox" name="scannerGroup">
+          <property name="title">
+           <string>Reality Scanner</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    color: #4fbdba;
+    border: 2px solid #4fbdba;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px 0 5px;
+}</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Target Object:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="targetObjectEdit">
+             <property name="placeholderText">
+              <string>e.g., coffee_cup, soap</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Position (x,y,z):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="positionEdit">
+             <property name="text">
+              <string>1.0, 0.5, 0.8</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Material:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="materialCombo">
+             <item>
+              <property name="text">
+               <string>Unknown</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Ceramic</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Plastic</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Metal</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Organic</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="2">
+            <widget class="QPushButton" name="scanButton">
+             <property name="text">
+              <string>🔍 Scan Object</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    background-color: #4fbdba;
+    color: #000;
+    font-weight: bold;
+}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        
+        <!-- Modification Section -->
+        <item>
+         <widget class="QGroupBox" name="modificationGroup">
+          <property name="title">
+           <string>Modification Parameters</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    color: #e94560;
+    border: 2px solid #e94560;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Property:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="propertyCombo">
+             <item>
+              <property name="text">
+               <string>Color</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Temperature</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>State (Solid/Liquid/Gas)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Mass</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Quantum State</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>From:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="fromValueEdit">
+             <property name="placeholderText">
+              <string>Current value</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>To:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="toValueEdit">
+             <property name="placeholderText">
+              <string>Target value</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Method:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QComboBox" name="methodCombo">
+             <item>
+              <property name="text">
+               <string>Quantum Tunneling</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Wave Function Collapse</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Entanglement Transfer</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Spacetime Folding</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        
+        <!-- Quantum Parameters -->
+        <item>
+         <widget class="QGroupBox" name="quantumGroup">
+          <property name="title">
+           <string>Quantum Parameters</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+    color: #7ec8e3;
+    border: 2px solid #7ec8e3;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}</string>
+          </property>
+          <layout class="QFormLayout" name="formLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>Coherence Time:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSlider" name="coherenceSlider">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>1000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>Hilbert Dimension:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="dimensionSpin">
+             <property name="minimum">
+              <number>2</number>
+             </property>
+             <property name="maximum">
+              <number>2048</number>
+             </property>
+             <property name="value">
+              <number>1024</number>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>Reality Field:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QProgressBar" name="realityFieldBar">
+             <property name="value">
+              <number>75</number>
+             </property>
+             <property name="format">
+              <string>%p% Strong</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        
+        <!-- Execute Button -->
+        <item>
+         <widget class="QPushButton" name="executeButton">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>⚡ MODIFY REALITY</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #e94560;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #ff1744;
+}</string>
+          </property>
+         </widget>
+        </item>
+        
+        <!-- Spacer -->
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        
+        <!-- About -->
+        <item>
+         <widget class="QLabel" name="aboutLabel">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#7ec8e3;&quot;&gt;Based on Si Chen's Novel&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#666;&quot;&gt;Theory: Li Moyuan | Code: Fang Zhou&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      
+      <!-- Right Panel: Visualization -->
+      <widget class="QWidget" name="visualizationPanel">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        
+        <!-- Tab Widget -->
+        <item>
+         <widget class="QTabWidget" name="mainTabs">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTabWidget::pane {
+    border: 1px solid #0f3460;
+    background-color: #0f1e3d;
+}
+
+QTabBar::tab {
+    background-color: #16213e;
+    color: #aaa;
+    padding: 8px 16px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background-color: #0f3460;
+    color: #fff;
+}</string>
+          </property>
+          
+          <!-- 3D Visualization Tab -->
+          <widget class="QWidget" name="visualTab">
+           <attribute name="title">
+            <string>3D Visualization</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="visualization3D">
+              <property name="minimumSize">
+               <size>
+                <width>600</width>
+                <height>400</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel {
+    background-color: #000;
+    border: 2px solid #4fbdba;
+    border-radius: 5px;
+}</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; color:#4fbdba;&quot;&gt;3D Visualization&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#666;&quot;&gt;[Not Yet Implemented]&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#888;&quot;&gt;Will show real-time quantum state evolution&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="controlsGroup">
+              <property name="title">
+               <string>Visualization Controls</string>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout">
+               <item>
+                <widget class="QPushButton" name="rotateButton">
+                 <property name="text">
+                  <string>🔄 Rotate</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="zoomButton">
+                 <property name="text">
+                  <string>🔍 Zoom</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="resetViewButton">
+                 <property name="text">
+                  <string>🔁 Reset</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="showFieldCheck">
+                 <property name="text">
+                  <string>Show Reality Field</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          
+          <!-- Quantum State Tab -->
+          <widget class="QWidget" name="quantumTab">
+           <attribute name="title">
+            <string>Quantum State</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QTextEdit" name="quantumStateText">
+              <property name="styleSheet">
+               <string notr="true">QTextEdit {
+    background-color: #0a0a0a;
+    color: #0f0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 12px;
+    border: 1px solid #0f0;
+}</string>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+              <property name="html">
+               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas','Monaco',monospace; font-size:12px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;=== Quantum State Monitor ===&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;State Vector: |ψ⟩ = ?&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Hilbert Space Dim: 1024&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Entanglement: None&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Coherence: 1.000&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#00ff00;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Waiting for scan...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="blochSphereGroup">
+              <property name="title">
+               <string>Bloch Sphere Representation</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <item>
+                <widget class="QLabel" name="blochSphereLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>300</width>
+                   <height>300</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel {
+    background-color: #111;
+    border: 1px solid #7ec8e3;
+    border-radius: 150px;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#7ec8e3;&quot;&gt;Bloch Sphere&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          
+          <!-- Logs Tab -->
+          <widget class="QWidget" name="logsTab">
+           <attribute name="title">
+            <string>System Logs</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QTextEdit" name="logsText">
+              <property name="styleSheet">
+               <string notr="true">QTextEdit {
+    background-color: #000;
+    color: #ccc;
+    font-family: monospace;
+    font-size: 11px;
+}</string>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+              <property name="html">
+               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'monospace'; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#4fbdba;&quot;&gt;[2028-07-06 19:30:00] Reality Modifier v0.31 initialized&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#7ec8e3;&quot;&gt;[2028-07-06 19:30:01] Quantum Random Generator: OPERATIONAL&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#e94560;&quot;&gt;[2028-07-06 19:30:02] Warning: Most features are still theoretical&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#666666;&quot;&gt;[2028-07-06 19:30:03] Waiting for user input...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          
+         </widget>
+        </item>
+        
+        <!-- Status Bar -->
+        <item>
+         <widget class="QFrame" name="statusFrame">
+          <property name="styleSheet">
+           <string notr="true">QFrame {
+    background-color: #0f1e3d;
+    border: 1px solid #0f3460;
+    border-radius: 5px;
+    padding: 5px;
+}</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="statusLabel">
+             <property name="text">
+              <string>Status: Ready</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="quantumStatusLabel">
+             <property name="text">
+              <string>Quantum Core: Simulated</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="entropyLabel">
+             <property name="text">
+              <string>Entropy: 0 bits</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="novaLabel">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffd700;&quot;&gt;Nova Project&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  
+  <!-- Menu Bar -->
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew_Project"/>
+    <addaction name="actionOpen_Project"/>
+    <addaction name="actionSave_Project"/>
+    <addaction name="separator"/>
+    <addaction name="actionImport_Novel"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionQuantum_Calculator"/>
+    <addaction name="actionReality_Field_Map"/>
+    <addaction name="actionEntanglement_Visualizer"/>
+    <addaction name="separator"/>
+    <addaction name="actionCalibrate_Scanner"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionTutorial"/>
+    <addaction name="actionTheory_Docs"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout_Nova"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  
+  <!-- Actions -->
+  <action name="actionNew_Project">
+   <property name="text">
+    <string>New Project</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen_Project">
+   <property name="text">
+    <string>Open Project</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave_Project">
+   <property name="text">
+    <string>Save Project</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionImport_Novel">
+   <property name="text">
+    <string>Import Novel Chapter...</string>
+   </property>
+   <property name="toolTip">
+    <string>Import chapters from Si Chen's novel for analysis</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionQuantum_Calculator">
+   <property name="text">
+    <string>Quantum Calculator</string>
+   </property>
+  </action>
+  <action name="actionReality_Field_Map">
+   <property name="text">
+    <string>Reality Field Map</string>
+   </property>
+  </action>
+  <action name="actionEntanglement_Visualizer">
+   <property name="text">
+    <string>Entanglement Visualizer</string>
+   </property>
+  </action>
+  <action name="actionCalibrate_Scanner">
+   <property name="text">
+    <string>Calibrate Scanner</string>
+   </property>
+  </action>
+  <action name="actionTutorial">
+   <property name="text">
+    <string>Tutorial</string>
+   </property>
+  </action>
+  <action name="actionTheory_Docs">
+   <property name="text">
+    <string>Theory Documentation</string>
+   </property>
+  </action>
+  <action name="actionAbout_Nova">
+   <property name="text">
+    <string>About Nova Project</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
