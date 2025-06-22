@@ -2,7 +2,7 @@
 
 **Quantum Universal Assembly for Novel Transformation & Unified Manipulation**
 
-[![Build Status](https://img.shields.io/github/workflow/status/TIQCCC-Labs/quantum-asm/CI)](https://github.com/TIQCCC-Labs/quantum-asm/actions) [![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://quantum.tiqccc.org/docs) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![QBIN: v2.0](https://img.shields.io/badge/QBIN-v2.0-green.svg)](https://quantum.tiqccc.org/qbin) [![C++17](https://img.shields.io/badge/C++-17-blue.svg)](https://en.cppreference.com/w/cpp/17) [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Build Status](https://img.shields.io/github/workflow/status/TIQCCC-Labs/quantum-asm/CI)](https://github.com/TIQCCC-Labs/quantum-asm/actions) [![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://quantum.tiqccc.org/docs) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![QBIN: v2.0](https://img.shields.io/badge/QBIN-v2.0-green.svg)](https://quantum.tiqccc.org/qbin) [![C++23](https://img.shields.io/badge/C++-23-blue.svg)](https://en.cppreference.com/w/cpp/23) [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
 > *"The first true implementation of quantum gates on classical computers"*
 
